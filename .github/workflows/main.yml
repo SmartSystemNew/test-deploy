@@ -16,7 +16,7 @@ jobs:
       - name: Set up SSH key
         run: |
           eval $(ssh-agent -s)
-          ssh-add <(echo "${{ SSH_PRIVATE_KEY }}" | base64 -d)
+          ssh-add <(echo "$SSH_PRIVATE_KEY" | base64 -d)
           # Note: $SSH_PRIVATE_KEY_WITH_PASSWORD é a variável secreta que contém a chave SSH privada protegida por senha.
 
       - name: SSH into DigitalOcean
